@@ -159,44 +159,44 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ORIGIN_ALLOW_ALL = True
 
-from corsheaders.defaults import default_headers
+# from corsheaders.defaults import default_headers
 
-CORS_ALLOW_HEADERS = list(default_headers) + [
-    'accept',
-    'accept-encoding',
-    'authorization',
-    'content-type',
-    'cache-control',
-    'x-sessionid',
-    'upgrade-insecure-requests',
-    'dnt',
-    'origin',
-    'user-agent',
-    'x-csrftoken',
-    'x-requested-with',
-]
+# CORS_ALLOW_HEADERS = list(default_headers) + [
+#     'accept',
+#     'accept-encoding',
+#     'authorization',
+#     'content-type',
+#     'cache-control',
+#     'x-sessionid',
+#     'upgrade-insecure-requests',
+#     'dnt',
+#     'origin',
+#     'user-agent',
+#     'x-csrftoken',
+#     'x-requested-with',
+# ]
 
-CORS_EXPOSE_HEADERS = [
-    'accept',
-    'Access-Control-Allow-Origin',
-    'accept-encoding',
-    'authorization',
-    'content-type',
-    'set-cookie',
-    'dnt',
-    'origin',
-    'user-agent',
-    'x-csrftoken',
-    'x-requested-with',
-]
+# CORS_EXPOSE_HEADERS = [
+#     'accept',
+#     'Access-Control-Allow-Origin',
+#     'accept-encoding',
+#     'authorization',
+#     'content-type',
+#     'set-cookie',
+#     'dnt',
+#     'origin',
+#     'user-agent',
+#     'x-csrftoken',
+#     'x-requested-with',
+# ]
 
-CORS_PREFLIGHT_MAX_AGE = 0
+# CORS_PREFLIGHT_MAX_AGE = 0
 
-CSRF_TRUSTED_ORIGINS =  ['https://osamwelian3.github.io', 'https://osamwelian3.github.io/STKPushPaymentService/']
+# CSRF_TRUSTED_ORIGINS =  ['https://osamwelian3.github.io', 'https://osamwelian3.github.io/STKPushPaymentService/']
 
-SECURE_REFERRER_POLICY = "strict-origin-when-cross-origin"
+# SECURE_REFERRER_POLICY = "strict-origin-when-cross-origin"
 
-SECURE_CROSS_ORIGIN_OPENER_POLICY = 'same-origin-allow-popups'
+# SECURE_CROSS_ORIGIN_OPENER_POLICY = 'same-origin-allow-popups'
 
 # Daraja Credentials
 Consumer_Key = 'jGK5j8GFyRQ8JGdBszlz1W1LA6Snm053'
