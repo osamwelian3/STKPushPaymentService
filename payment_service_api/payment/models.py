@@ -13,3 +13,10 @@ class Payment(models.Model):
     
     def __str__(self):
         return f"Payment {self.transaction_id}"
+
+class Token(models.Model):
+    access_token = models.CharField(max_length=255, unique=True)
+    expiry = models.DateTimeField(default=datetime.datetime.now()+datetime.timedelta(0,3599))
+
+    def __str__(self) -> str:
+        return f"Access token: {self.access_token}"
