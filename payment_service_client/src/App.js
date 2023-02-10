@@ -35,7 +35,7 @@ function App() {
     })
     .catch((error) => {
       console.log(error)
-      setMessage(error.message)
+      setMessage(error.response.data.error)
       setLoading(false)
     });
 
