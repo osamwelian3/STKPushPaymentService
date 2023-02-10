@@ -190,6 +190,12 @@ CORS_EXPOSE_HEADERS = [
 
 CORS_PREFLIGHT_MAX_AGE = 0
 
+CSRF_TRUSTED_ORIGINS =  ['https://osamwelian3.github.io', 'https://osamwelian3.github.io/STKPushPaymentService/']
+
+SECURE_REFERRER_POLICY = "strict-origin-when-cross-origin"
+
+SECURE_CROSS_ORIGIN_OPENER_POLICY = 'same-origin-allow-popups'
+
 # Daraja Credentials
 Consumer_Key = 'jGK5j8GFyRQ8JGdBszlz1W1LA6Snm053'
 Consumer_Secret = '1LoqARyPTGBsjhkl'
