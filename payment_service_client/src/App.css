@@ -1,0 +1,100 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    vertical-align: middle;
+    padding: 0px 200px;
+    background-color: beige;
+}
+
+.logo > a {
+    text-decoration: none;
+    color: black;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+}
+
+.menu-item {
+    margin: 1px 5px;
+}
+
+.menu-item > a {
+    text-decoration: none;
+    color: black;
+    font-size: 30px;
+    padding: 10px 15px;
+}
+
+.menu-item > a:hover {
+    background-color: rgba(247, 247, 30, 0.151);
+    color: white;
+    border-radius: 10px;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    height: 80vh;
+    width: 80vh;
+    background-color: white;
+    margin-top: 20px;
+    border-radius: 15px;
+}
+
+.stkform {
+    text-align: center;
+}
+
+.input-field {
+    padding: 10px;
+    border-radius: 10px;
+    width: 40%;
+}
+
+.text-center {
+    text-align: center!important;
+}
+
+hr {
+    width: 90%;
+    margin: 30px 36px;
+}
+
+.push {
+    margin-top: 30px;
+}
+
+.push > button {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: green;
+    font-size: 20px;
+}
+
+.push > button:hover {
+    background-color: greenyellow;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 1054px) {
+    .menu {
+        display: none;
+    }
+
+    .logo {
+        margin: 16px 0px;
+    }
+
+    .logo > a {
+        padding: 10px 15px;
+    }
+}
