@@ -157,6 +157,23 @@ STATIC_ROOT = Path.joinpath(BASE_DIR, 'StaticRoot')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+from corsheaders.defaults import default_headers
+
+CORS_ALLOW_HEADERS = list(default_headers) + [
+    'accept',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'cache-control',
+    'x-sessionid',
+    'upgrade-insecure-requests',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
+]
+
 # Daraja Credentials
 Consumer_Key = 'jGK5j8GFyRQ8JGdBszlz1W1LA6Snm053'
 Consumer_Secret = '1LoqARyPTGBsjhkl'
