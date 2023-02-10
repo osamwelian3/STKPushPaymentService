@@ -174,6 +174,21 @@ CORS_ALLOW_HEADERS = list(default_headers) + [
     'x-requested-with',
 ]
 
+CORS_EXPOSE_HEADERS = [
+    'accept',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'set-cookie',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
+]
+
+CORS_PREFLIGHT_MAX_AGE = 0
+
 # Daraja Credentials
 Consumer_Key = 'jGK5j8GFyRQ8JGdBszlz1W1LA6Snm053'
 Consumer_Secret = '1LoqARyPTGBsjhkl'
