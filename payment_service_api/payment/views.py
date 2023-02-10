@@ -31,6 +31,9 @@ class PaymentViewSet(viewsets.ModelViewSet):
                             if validate['ResultDesc'] == "The initiator information is invalid.":
                                 message = "Something went wrong"
                                 return Response({'error': message}, status=400)
+                            if validate['ResultDesc'] == "DS timeout user cannot be reached":
+                                message = "Your phone cannot be reached to initiate transaction"
+                                return Response({'error': message}, status=400)
                             if validate['ResultDesc'] == "Request cancelled by user":
                                 message = "You took too long or cancelled the PIN request for the transaction Please try again"
                                 return Response({'error': message}, status=400)
