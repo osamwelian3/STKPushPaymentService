@@ -176,6 +176,7 @@ CORS_ALLOW_HEADERS = list(default_headers) + [
 
 CORS_EXPOSE_HEADERS = [
     'accept',
+    'Access-Control-Allow-Origin',
     'accept-encoding',
     'authorization',
     'content-type',
