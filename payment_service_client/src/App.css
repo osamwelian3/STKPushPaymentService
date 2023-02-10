@@ -85,6 +85,10 @@ hr {
     cursor: pointer;
 }
 
+.error {
+    color: red;
+}
+
 @media only screen and (max-width: 1054px) {
     .menu {
         display: none;
@@ -96,5 +100,15 @@ hr {
 
     .logo > a {
         padding: 10px 15px;
+    }
+}
+
+@media only screen and (max-width: 660px) {
+    hr {
+        display: none;
+    }
+
+    nav {
+        padding: 0px 5px;
     }
 }
