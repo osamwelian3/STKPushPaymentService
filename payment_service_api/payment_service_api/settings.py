@@ -157,6 +157,8 @@ STATIC_ROOT = Path.joinpath(BASE_DIR, 'StaticRoot')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+CORS_ORIGIN_ALLOW_ALL = True
+
 from corsheaders.defaults import default_headers
 
 CORS_ALLOW_HEADERS = list(default_headers) + [
