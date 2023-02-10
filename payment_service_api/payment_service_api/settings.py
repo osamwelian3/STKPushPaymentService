@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-shc+x0rwi0b^ormesa+ucub-#^bfwx*t(b2b0#8fe$_s9@fwc!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -91,10 +91,10 @@ DATABASES = {
 
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'payment',
-        'USER': 'payment_user',
-        'PASSWORD': 'password',
-        'HOST': 'localhost',
+        'NAME': 'payment$payment', # 'payment',
+        'USER': 'payment', # 'payment_user',
+        'PASSWORD': '@Password', # 'password',
+        'HOST': 'payment.mysql.pythonanywhere-services.com', # 'localhost',
         'PORT': '3306',
     },
 
