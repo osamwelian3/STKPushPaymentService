@@ -56,7 +56,7 @@ class Transaction:
             "PartyA": phone,
             "PartyB": BusinessShortCode,
             "PhoneNumber": phone,
-            "CallBackURL": "https://mydomain.com/path",
+            "CallBackURL": "http://payment.pythonanywhere.com/payment/callback/",
             "AccountReference": AccountReference,
             "TransactionDesc": "Test Payment" 
         }
