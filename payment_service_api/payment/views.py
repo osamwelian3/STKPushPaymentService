@@ -50,8 +50,9 @@ class PaymentViewSet(viewsets.ModelViewSet):
         print(request.method)
         print(request.GET)
         print(request.POST)
-        data = json.loads(request.data)
-        print(data)
+        # data = json.loads(request.data)
+        print(type(request.data))
+        print(type(request.data.get('Body')))
 
 
         context = {
