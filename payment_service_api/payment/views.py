@@ -39,7 +39,7 @@ class PaymentViewSet(viewsets.ModelViewSet):
                                 return Response({'error': message}, status=400)
                             if validate['ResultDesc'] == "The service request is processed successfully.":
                                 message = "Yey... Payment went through"
-                                return Response({'success', message})
+                                return Response({'success': message})
                             
             return Response({'error': 'Something went wrong'})
         return Response({'error': 'Something went wrong'})
@@ -49,5 +49,6 @@ class PaymentViewSet(viewsets.ModelViewSet):
         print(request.method)
         print(request.GET)
         print(request.POST)
+        print(request.data)
         return Response({})
 
