@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-shc+x0rwi0b^ormesa+ucub-#^bfwx*t(b2b0#8fe$_s9@fwc!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -89,14 +89,14 @@ DATABASES = {
     #     TO 'django_user'@'127.0.0.1' 
     #     IDENTIFIED BY 'XYZ***'; 
 
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'payment$payment', # 'payment',
-        'USER': 'payment', # 'payment_user',
-        'PASSWORD': '@Password', # 'password',
-        'HOST': 'payment.mysql.pythonanywhere-services.com', # 'localhost',
-        'PORT': '3306',
-    },
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'NAME': 'payment$payment', # 'payment',
+    #     'USER': 'payment', # 'payment_user',
+    #     'PASSWORD': '@Password', # 'password',
+    #     'HOST': 'payment.mysql.pythonanywhere-services.com', # 'localhost',
+    #     'PORT': '3306',
+    # },
 
     # Full permissions to allow migration operations as they require schema access 
     # Run migrations with command 'python manage.py migrate --database=default_with_migration_rights'
@@ -104,7 +104,7 @@ DATABASES = {
     #     TO 'django_migration_user'@'127.0.0.1' 
     #     IDENTIFIED BY 'XYZ***'; 
 
-    'default_for_migrations': {
+    'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'payment',
         'USER': 'root',

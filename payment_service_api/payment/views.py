@@ -44,3 +44,10 @@ class PaymentViewSet(viewsets.ModelViewSet):
             return Response({'error': 'Something went wrong'})
         return Response({'error': 'Something went wrong'})
 
+    @action(detail=False, methods=['post', 'get'])
+    def callback(self, request, *args, **kwargs):
+        print(request.method)
+        print(request.GET)
+        print(request.POST)
+        return Response({})
+
