@@ -47,14 +47,13 @@ class PaymentViewSet(viewsets.ModelViewSet):
 
     @action(detail=False, methods=['post', 'get'])
     def callback(self, request, *args, **kwargs):
-        print(request.method)
-        print(request.GET)
-        print(request.POST)
-        # data = json.loads(request.data)
-        print(type(request.data))
-        print(type(request.data.get('Body')))
-
-
+        if request.method == 'POST':
+            transaction_id = request.data.get('Body').get('stkCallback').get('CallbackMetadata').get('Item')[1].get('Value')
+            phone_number = request.data.get('Body').get('stkCallback').get('CallbackMetadata').get('Item')[3].get('Value')
+            amount = request.data.get('Body').get('stkCallback').get('CallbackMetadata').get('Item')[0].get('Value')
+            status = request.data.get('Body').get('stkCallback').get('ResultDesc')
+            payment = Payment.objects.create(transaction_id, phone_number, amount, status, payment)
+            payment.save()
         context = {
             "ResultCode": 0,
             "ResultDesc": "Accepted"
