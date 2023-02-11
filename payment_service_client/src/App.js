@@ -7,11 +7,12 @@ import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 
 function App() {
   const [phone_number, setPhone] = useState('');
-  const [message, setMessage] = useState('')
+  const [message, setMessage] = useState('');
+  const [success, setSuccess] = useState(false);
   const [loading, setLoading] = useState(false);
 
   const axiosInstance = axios.create({
-      baseURL: `http://localhost:8000`,
+      baseURL: `https://payment.pythonanywhere.com`,
       headers: {
           'Accept': 'application/json',
           'Content-type': 'application/json',
@@ -21,7 +22,8 @@ function App() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setMessage('')
+    setMessage('');
+    setSuccess(false);
     setLoading(true);
     console.log(phone_number)
 
@@ -30,12 +32,20 @@ function App() {
     await axiosInstance({url:`/payment/pay/`, method: 'POST', data: body})
     .then((res) => {
       console.log(res.data)
+      setSuccess(true);
+      setMessage(res.data.success)
       setLoading(false);
       setPhone('')
     })
     .catch((error) => {
       console.log(error)
-      setMessage(error.response.data.error)
+      setSuccess(false)
+      if ('response' in error){
+        setMessage(error.response.data.error)
+      } else {
+        setMessage(error.message)
+      }
+      
       setLoading(false)
     });
 
@@ -66,7 +76,7 @@ function App() {
               <button disabled={loading}>{loading ? <FontAwesomeIcon icon={faSpinner} spin /> : 'Pay'}</button>
             </div>
             <div>
-              {message == '' ? '' : <p className='error'>{message}</p>}
+              {success ? <p className='info'>{message}</p> : <p className='error'>{message}</p>}
             </div>
           </form>
         </div>

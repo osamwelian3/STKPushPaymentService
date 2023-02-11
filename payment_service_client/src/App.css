@@ -89,6 +89,10 @@ hr {
     color: red;
 }
 
+.info {
+    color: green;
+}
+
 @media only screen and (max-width: 1054px) {
     .menu {
         display: none;
