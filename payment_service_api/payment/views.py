@@ -7,6 +7,7 @@ from rest_framework import viewsets, status
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from .transaction_handler import Transaction
+import json
 
 # Create your views here.
 class PaymentViewSet(viewsets.ModelViewSet):
@@ -49,6 +50,13 @@ class PaymentViewSet(viewsets.ModelViewSet):
         print(request.method)
         print(request.GET)
         print(request.POST)
-        print(request.data)
-        return Response({})
+        data = json.loads(request.data)
+        print(data)
+
+
+        context = {
+            "ResultCode": 0,
+            "ResultDesc": "Accepted"
+        }
+        return Response(dict(context))
 

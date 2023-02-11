@@ -89,14 +89,14 @@ DATABASES = {
     #     TO 'django_user'@'127.0.0.1' 
     #     IDENTIFIED BY 'XYZ***'; 
 
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'payment$payment', # 'payment',
-        'USER': 'payment', # 'payment_user',
-        'PASSWORD': '@Password', # 'password',
-        'HOST': 'payment.mysql.pythonanywhere-services.com', # 'localhost',
-        'PORT': '3306',
-    },
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'NAME': 'payment$payment', # 'payment',
+    #     'USER': 'payment', # 'payment_user',
+    #     'PASSWORD': '@Password', # 'password',
+    #     'HOST': 'payment.mysql.pythonanywhere-services.com', # 'localhost',
+    #     'PORT': '3306',
+    # },
 
     # Full permissions to allow migration operations as they require schema access 
     # Run migrations with command 'python manage.py migrate --database=default_with_migration_rights'
@@ -104,14 +104,14 @@ DATABASES = {
     #     TO 'django_migration_user'@'127.0.0.1' 
     #     IDENTIFIED BY 'XYZ***'; 
 
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.mysql',
-    #     'NAME': 'payment',
-    #     'USER': 'root',
-    #     'PASSWORD': 'toor',
-    #     'HOST': '127.0.0.1',
-    #     'PORT': '3306',
-    # }
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'payment',
+        'USER': 'root',
+        'PASSWORD': 'toor',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
+    }
 }
 
 
