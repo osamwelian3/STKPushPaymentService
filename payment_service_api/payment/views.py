@@ -52,7 +52,7 @@ class PaymentViewSet(viewsets.ModelViewSet):
             phone_number = request.data.get('Body').get('stkCallback').get('CallbackMetadata').get('Item')[3].get('Value')
             amount = request.data.get('Body').get('stkCallback').get('CallbackMetadata').get('Item')[0].get('Value')
             status = request.data.get('Body').get('stkCallback').get('ResultDesc')
-            payment = Payment.objects.create(transaction_id, phone_number, amount, status, payment)
+            payment = Payment.objects.create(transaction_id, phone_number, amount, status)
             payment.save()
         context = {
             "ResultCode": 0,
