@@ -18,6 +18,22 @@ from django.urls import path, include, re_path
 from rest_framework import permissions
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
+from rest_framework.routers import DefaultRouter
+from payment.views import PaymentViewSet
+from UserAuth.views import UserViewSet
+from rest_framework.authtoken import views
+
+router = DefaultRouter()
+
+router.register('payment', PaymentViewSet)
+router.register('users', UserViewSet, basename='users')
+
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', include(router.urls)),
+    path('api-token-auth/', views.obtain_auth_token),
+]
 
 schema_view = get_schema_view(
    openapi.Info(
@@ -26,12 +42,11 @@ schema_view = get_schema_view(
       description="Mpesa Payment API with stk push",
    ),
    public=True,
+   patterns=urlpatterns,
    permission_classes=[permissions.AllowAny],
 )
 
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('payment.urls')),
+urlpatterns += [
     re_path(r'^swagger(?P<format>\.json|\.yaml)$', schema_view.without_ui(cache_timeout=0), name='schema-json'),
     re_path(r'^swagger/$', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     re_path(r'^redoc/$', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
