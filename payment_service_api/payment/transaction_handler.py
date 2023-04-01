@@ -1,4 +1,5 @@
 from payment_service_api.settings import Consumer_Key, Consumer_Secret, BusinessShortCode, Passkey, TransactionType, PartyB, AccountReference, TIME_ZONE
+from requests.auth import HTTPBasicAuth
 from .models import Token
 import base64
 import requests
@@ -15,6 +16,7 @@ class Transaction:
     def get_basic_auth(self):
         encoded_string = base64.b64encode(bytes('%s:%s' % (self.consumer_key, self.consumer_secret), 'ascii'))
         encoded_string = encoded_string.decode("utf-8")
+        # encoded_string = ''.join(e for e in encoded_string if e.isalnum())
         print(encoded_string)
         return encoded_string
 
@@ -28,7 +30,10 @@ class Transaction:
                 old_token.delete
                 raise Token.DoesNotExist
         except Token.DoesNotExist as e:
-            response = requests.get('https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials', auth=(self.consumer_key, self.consumer_secret))
+            header = { 'Authorization': 'Basic '+self.get_basic_auth() }
+            response = requests.get('https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials', headers=header)
+            print("+++++++"+str(e))
+            print(response.text)
             data = json.loads(response.text)
             token = Token.objects.create(access_token=data['access_token'], expiry=datetime.datetime.now()+datetime.timedelta(0, int(data['expires_in'])))
             token.save()

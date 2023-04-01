@@ -202,10 +202,10 @@ CORS_ORIGIN_ALLOW_ALL = True
 # SECURE_CROSS_ORIGIN_OPENER_POLICY = 'same-origin-allow-popups'
 
 # Daraja Credentials
-Consumer_Key = 'jGK5j8GFyRQ8JGdBszlz1W1LA6Snm053'
-Consumer_Secret = '1LoqARyPTGBsjhkl'
+Consumer_Key = 'fg79A5OfeGHfdA3Nv27Y9kDIAcRHfbML'
+Consumer_Secret = 'yPuwhn7b5esmdZe1'
 BusinessShortCode = 174379
 Passkey = 'bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919'
 TransactionType = 'CustomerPayBillOnline'
 PartyB = 174379
-AccountReference = 'Sasakazi Assesment'
+AccountReference = 'Kasarani Reckoning Welfare'
